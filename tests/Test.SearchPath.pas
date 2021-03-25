@@ -10,13 +10,13 @@ interface
   type
     SearchPathTests = class(TTest)
       procedure SetupMethod;
-      procedure FindFileFindsFileInCurrentDirWithNoPathSet;
       procedure FindFileReturnsFalseWhenFileDoesNotExist;
       procedure GetAsString;
       procedure HomeDirIsCurrentDirWhenNotSet;
       procedure HomeDirOverridesCurrentDirWhenSet;
       procedure SetAsString;
     {$ifNdef _CICD}
+      procedure FindFileFindsFileInCurrentDirWithNoPathSet;
       procedure FindTestDprByRelativePathInFilename;
       procedure FindTestDprByRelativeSearchPathReturnsFalseWhenNotFound;
       procedure FindTestDprByRelativeSearchPathReturnsTrueWhenFound;
@@ -49,12 +49,6 @@ implementation
 
 
 
-
-
-  procedure SearchPathTests.FindFileFindsFileInCurrentDirWithNoPathSet;
-  begin
-    Test('FindFile').Assert(sut.FindFile('test.exe')).IsTrue;
-  end;
 
 
   procedure SearchPathTests.FindFileReturnsFalseWhenFileDoesNotExist;
@@ -98,6 +92,12 @@ implementation
 
 
 {$ifNdef _CICD}
+  procedure SearchPathTests.FindFileFindsFileInCurrentDirWithNoPathSet;
+  begin
+    Test('FindFile').Assert(sut.FindFile('test.exe')).IsTrue;
+  end;
+
+
   procedure SearchPathTests.FindTestDprByRelativePathInFilename;
   begin
     Test('FindFile(..\..\test.dpr').Assert(sut.FindFile('..\..\test.dpr')).IsTrue;
