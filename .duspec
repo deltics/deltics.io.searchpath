@@ -13,7 +13,7 @@
   "content":"source",
   "dependencies":[
     "deltics.inc:1.3.0",
-    "deltics.io.path:1.0.0-beta.2"
+    "deltics.io.path:1.0.0"
   ],
   "source":{
       "files":[
