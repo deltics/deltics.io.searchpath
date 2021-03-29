@@ -28,8 +28,7 @@ implementation
   uses
     SysUtils,
     Deltics.InterfacedObjects,
-    Deltics.IO.Path,
-    Deltics.Strings;
+    Deltics.IO.Path;
 
 
 
