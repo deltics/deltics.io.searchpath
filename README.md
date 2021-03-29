@@ -1,3 +1,9 @@
-# Deltics.FileSystem 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# Deltics.IO.SearchPath
+
+Encapsulates a search path with the ability to search for an individual file on that search
+path and identify where it (or the first instance of highest precedence) may be found
+on that path.
+
+To work with/search for lists of files in a location (or locations) refer to the
+Deltics.IO.FileSearch package.
 
